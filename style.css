@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Red+Hat+Text:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+:root {
+  --red-primary: #da2535;
+  --pink: #f7c7b9;
+  --white: #f9f9f9;
+  --gray: #8d8d8d;
+  --gray-200: #404040;
+  --black-light: #161212;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 2rem;
+
+  background: var(--pink);
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul li a {
+  color: var(--black-light);
+  font-size: 1.6rem;
+  padding: 10px;
+}
+
+.container__logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.container__start {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--pink);
+
+  padding: 2rem;
+}
+
+.container__start .text__introduction h1 {
+  font-size: 4.8rem;
+  max-width: 500px;
+  color: var(--black-light);
+}
+
+.text__introduction p {
+  max-width: 420px;
+  margin: 10px 0;
+  color: var(--gray);
+}
+
+.button__donation {
+  background: var(--red-primary);
+  color: var(--white);
+  cursor: pointer;
+  border: none;
+
+  padding: 12px 32px 12px 32px;
+  border-radius: 8px;
+  gap: 2rem;
+
+  width: 250px;
+  height: 48px;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  margin-top: 50px;
+}
+
+.container__accessories {
+  width: 100%;
+  padding: 0 11.1rem;
+}
+
+.container__accessories .text__introduction h1 {
+  font-size: 4.8rem;
+  color: var(--black-light);
+}
+
+.accessories {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.accessories article h2 {
+  font-size: 2rem;
+}
+
+.accessories article p {
+  color: var(--gray);
+}
+
+.container__donation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 11.1rem;
+  width: 100%;
+
+  background: var(--pink);
+  margin-top: 50px;
+}
+
+.donation {
+  display: flex;
+  flex-direction: column;
+}
+
+.container__donation .donation h1 {
+  font-size: 4.8rem;
+  color: var(--black-light);
+}
+
+.container__donation .donation p {
+  color: var(--gray-200);
+  margin: 10px 0;
+}
+
+.container__donation .donation h1,
+.container__donation .donation p {
+  text-align: left;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  height: 140px;
+}
+
+footer .container__contact {
+  display: flex;
+  gap: 2rem;
+}
+
+footer .container__contact .contact img {
+  z-index: 1000;
+}
+
+.menu-mobile div {
+  width: 32px;
+  height: 2px;
+  margin: 8px;
+
+  background: var(--white);
+  transition: 0.3s;
+}
+
+.menu-mobile {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 970px) {
+  .container__donation .donation h1 {
+    font-size: 4rem;
+    color: var(--black-light);
+  }
+  .container__donation {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 690px) {
+  .container__start {
+    flex-direction: column;
+  }
+  .container__donation {
+    flex-direction: column;
+  }
+  .container__donation .donation {
+    order: -1;
+  }
+  .accessories {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  nav ul {
+    position: absolute;
+    top: 12vh;
+    width: 100%;
+    height: 100vh;
+    right: 0;
+
+    background: var(--pink);
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    display: none;
+  }
+  ul li {
+    margin-left: 0;
+  }
+  .menu-mobile {
+    display: block;
+  }
+  .menu-mobile.active .line-1 {
+    transform: rotate(45deg) translate(7px, 7px);
+  }
+  .menu-mobile.active .line-2 {
+    opacity: 0;
+  }
+  .menu-mobile.active .line-3 {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+  ul.active {
+    display: flex;
+  }
+}
+
+@media (max-width: 461px) {
+  .container__start .text__introduction h1 {
+    font-size: 4rem;
+  }
+  .contact .container__logo h1 {
+    font-size: 2rem;
+  }
+  footer {
+    flex-direction: column;
+  }
+}
+
+.container__donation img,
+.container__start img,
+.accessories img,
+.container__contact img {
+  width: 100%;
+  height: auto;
+}
